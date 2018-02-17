@@ -2,9 +2,9 @@
 require 'open-uri'
 require 'nokogiri'
 require 'pry'
-state= "Maryland"
+state= "Virginia"
 html = open('https://www.trulia.com/home_prices/' + state + '/')
 doc = Nokogiri::HTML(html)
 
 puts doc.css("td")
-#binding.pry
+binding.pry

@@ -15,6 +15,7 @@ class RealEstate::CLI
 
     elsif input2== "one"
       app.by_county
+      county= input2.capitalize!
     end
 
     while input != "exit"
