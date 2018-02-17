@@ -7,7 +7,7 @@ module Realestate
   # Your code goes here...
 end
 class RealEstate
-  html = open('http://www.google.com')
+  html = open('https://www.trulia.com/home_prices/Maryland/')
   doc = Nokogiri::HTML(html)
   doc.css
 end
