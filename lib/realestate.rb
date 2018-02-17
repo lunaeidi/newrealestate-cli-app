@@ -13,6 +13,15 @@ require 'nokogiri'
   doc = Nokogiri::HTML(html)
 
   #for case of individual county: sub in county argument, loop through elements with i .
+  input= gets.strip #gets county input and uppercase it
+  input.capitalize!
+  doc.css("td").each_with_index do |td,i|
+    if link.include?(input)
+      puts doc.css("td")[i+1].text  #outputs the price for the county
+    end
+  end
+
+  doc.css("td")[15].text.include?(input)
   doc.css("td")[15].text.include?("Montgomery")
   #for case of listing all
   doc.css("td")[11].text.gsub("\n","") #gives Talbot
