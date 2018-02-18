@@ -2,12 +2,15 @@
 #require_relative "./realestate.rb" ??
 require 'pry'
 class Realestate::CLI
+    def greeting
+      puts "Hello! Welcome to the RealEstate App!"
+    end
     def call
-    puts "Hello! Welcome to the RealEstate App!"
     puts "Enter the name of the state for the Average Listing Price per county."
-    state= gets.strip.capitalize #needs to be capitalized ?
-    # while input != "exit"
-    # end
+    state= gets.strip.capitalize
+    if state.include?(" ")
+      state= state.gsub(" ","_")
+    end
     puts "Would you like to see the listing prices for all counties, or for one county? Type 'all' or 'one'"
     input2= gets.strip
     if input2== "all"
@@ -29,7 +32,7 @@ class Realestate::CLI
       elsif input4== 'exit'
       else
         newcounty= input4 #check if correct capitalization?
-        Realestate::RealEstate.by_county(state,newcouty)
+        Realestate::RealEstate.by_county(state,newcounty)
       #else
       end
     end
