@@ -1,0 +1,32 @@
+
+[1mFrom:[0m /home/nicoleeidi/temporary/newrealestate-cli-app/lib/realestate/cli.rb @ line 14 Realestate::CLI#call:
+
+     [1;34m5[0m:   [32mdef[0m [1;34mcall[0m
+     [1;34m6[0m:   puts [31m[1;31m"[0m[31mHello! Welcome to the RealEstate App![1;31m"[0m[31m[0m
+     [1;34m7[0m:   puts [31m[1;31m"[0m[31mEnter the name of the state for the Average Listing Price per county.[1;31m"[0m[31m[0m
+     [1;34m8[0m:   state= gets.strip [1;34m#needs to be capitalized ?[0m
+     [1;34m9[0m:   [1;34m# while input != "exit"[0m
+    [1;34m10[0m:   [1;34m# end[0m
+    [1;34m11[0m:   puts [31m[1;31m"[0m[31mWould you like to see the listing prices for all counties, or for one county? Type 'all' or 'one'[1;31m"[0m[31m[0m
+    [1;34m12[0m:   input2= gets.strip
+    [1;34m13[0m:   [32mif[0m input2== [31m[1;31m"[0m[31mall[1;31m"[0m[31m[0m
+ => [1;34m14[0m:     binding.pry
+    [1;34m15[0m:         [1;34;4mRealestate[0m::[1;34;4mRealEstate[0m.all_counties(state) [1;34m#are my methods class or instance methods?[0m
+    [1;34m16[0m:   [32melsif[0m input2== [31m[1;31m"[0m[31mone[1;31m"[0m[31m[0m
+    [1;34m17[0m:     county= gets.strip [1;34m#needs to be capitalized ?[0m
+    [1;34m18[0m:     [1;34m#county= input3.capitalize![0m
+    [1;34m19[0m:     [1;34;4mRealestate[0m::[1;34;4mRealEstate[0m.by_county(state,county)
+    [1;34m20[0m:     puts [31m[1;31m"[0m[31mPlease enter another county, enter 'restart' to check a different state, or enter 'exit'[1;31m"[0m[31m[0m
+    [1;34m21[0m:     input4= gets.strip
+    [1;34m22[0m:     [32mif[0m input4== [31m[1;31m'[0m[31mrestart[1;31m'[0m[31m[0m
+    [1;34m23[0m:       call
+    [1;34m24[0m:     [32melsif[0m input4== [31m[1;31m'[0m[31mexit[1;31m'[0m[31m[0m
+    [1;34m25[0m:     [32melse[0m
+    [1;34m26[0m:       newcounty= input4 [1;34m#check if correct capitalization?[0m
+    [1;34m27[0m:       [1;34;4mRealestate[0m::[1;34;4mRealEstate[0m.by_county(state,newcouty)
+    [1;34m28[0m:     [1;34m#else[0m
+    [1;34m29[0m:     [32mend[0m
+    [1;34m30[0m:   [32mend[0m
+    [1;34m31[0m: 
+    [1;34m32[0m: [32mend[0m
+
