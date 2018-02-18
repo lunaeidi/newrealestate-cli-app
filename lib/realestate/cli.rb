@@ -1,29 +1,29 @@
 #CLI Controller
 #require_relative "./realestate.rb" ??
+require 'pry'
 class Realestate::CLI
     def call
     puts "Hello! Welcome to the RealEstate App!"
     puts "Enter the name of the state for the Average Listing Price per county."
-    input1= gets.strip #these two lines combined?
-    state= input1.capitalize!
-
+    state= gets.strip #needs to be capitalized ?
     # while input != "exit"
     # end
     puts "Would you like to see the listing prices for all counties, or for one county? Type 'all' or 'one'"
     input2= gets.strip
     if input2== "all"
-      Realestate::RealEstate.all_counties(state) #are my methods class or instance methods?
-
+    #  binding.pry
+          Realestate::RealEstate.all_counties(state) #are my methods class or instance methods?
     elsif input2== "one"
-      input3= gets.strip #these two lines can be comibened ?
-      county= input3.capitalize!
+      county= gets.strip #needs to be capitalized ?
+      #county= input3.capitalize!
       Realestate::RealEstate.by_county(state,county)
-      puts "Please enter another county or enter 'restart' to check a different state."
+      puts "Please enter another county, enter 'restart' to check a different state, or enter 'exit'"
       input4= gets.strip
       if input4== 'restart'
         call
+      elsif input4== 'exit'
       else
-        newcounty= input4.capitalize! #check if correct capitalization
+        newcounty= input4 #check if correct capitalization?
         Realestate::RealEstate.by_county(state,newcouty)
       #else
       end

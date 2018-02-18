@@ -6,4 +6,4 @@ state= "Maryland"
 html = open('https://www.trulia.com/home_prices/' + state + '/')
 doc = Nokogiri::HTML(html)
 
-puts doc.css("td")[11]
+puts doc.css("td").length-5
