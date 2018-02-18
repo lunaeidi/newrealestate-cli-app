@@ -39,7 +39,6 @@ end
 
   end
 end
-Realestate::RealEstate.all_counties("Maryland")
 
   #doc.css("td")[15].text.include?("Montgomery")
   #doc.css("td")[11].text.gsub("\n","") #first county

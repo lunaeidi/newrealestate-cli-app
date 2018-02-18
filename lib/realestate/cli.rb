@@ -11,8 +11,12 @@ class Realestate::CLI
     puts "Would you like to see the listing prices for all counties, or for one county? Type 'all' or 'one'"
     input2= gets.strip
     if input2== "all"
-      binding.pry
-          Realestate::RealEstate.all_counties(state) #are my methods class or instance methods?
+      Realestate::RealEstate.all_counties(state) #are my methods class or instance methods?
+      puts "Enter 'restart' to go back to main menu, or enter 'exit'"
+      input5= gets.strip
+      if input5== 'restart'
+        call
+      end
     elsif input2== "one"
       puts "Enter the county name:"
       county= gets.strip.capitalize #needs to be capitalized ?
