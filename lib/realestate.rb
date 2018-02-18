@@ -15,9 +15,10 @@ def self.by_county(state, county)
   html = open('https://www.trulia.com/home_prices/' + state + '/')#no conversion of nil into string
   doc = Nokogiri::HTML(html)
   doc.css("td").each_with_index do |link,i|
-    if link.include?(county) || link.include?(county.upcase)
-    #if doc.css("td")[15].text.include?(input)
-      puts doc.css("td")[i+1].text  #outputs the price for the county
+    if link.text != nil
+        if link.text.include?(county) || link.text.include?(county.upcase)
+      puts doc.css("td")[i+1].text
+      end
     end
   end
 end
