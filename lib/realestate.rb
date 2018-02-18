@@ -3,10 +3,10 @@ require_relative "./realestate/version"
 require_relative "./realestate/cli"
 require 'open-uri'
 require 'nokogiri'
-#module Realestate
+module Realestate
 
   # Your code goes here...
-#end
+
 class RealEstate
 #DO I want it to give all counties, or for user to enter a county and give one?
   html = open('https://www.trulia.com/home_prices/Maryland/')#need the user input of state to be the argument here.
@@ -30,7 +30,7 @@ def all_counties(state)
   doc = Nokogiri::HTML(html)
   #doc.css("td").each_with_index do |link,i|
   i = 11
-  until i < doc.css("td").length #is this valid ?
+  until i < (doc.css("td").length -5) #is this valid ?
     county= doc.css("td")[i].text.gsub("\n","")
     listprice= doc.css("td")[i+1].text
     puts "#{county}: #{listprice}"
@@ -45,4 +45,5 @@ end
   doc.css("td")[11].text.gsub("\n","") #first county
   doc.css("td")[12].text #gives list price, then skip 13 and 14
 
+end
 end
