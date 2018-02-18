@@ -13,11 +13,9 @@ class RealEstate
   doc = Nokogiri::HTML(html)
 
   #for case of individual county: sub in county argument, loop through elements with i .
-def by_county(state, county)
+def self.by_county(state, county)
   html = open('https://www.trulia.com/home_prices/' + state + '/')#is there a way to plug in a variable in an open-uri link?
   doc = Nokogiri::HTML(html)
-  input= gets.strip #wont have this here. have this in call method.
-  input.capitalize!
   doc.css("td").each_with_index do |link,i|
     if link.include?(input)
     #if doc.css("td")[15].text.include?(input)
@@ -25,7 +23,7 @@ def by_county(state, county)
     end
   end
 end
-def all_counties(state)
+def self.all_counties(state)
   html = open('https://www.trulia.com/home_prices/' + state + '/')#is there a way to plug in a variable in an open-uri link?
   doc = Nokogiri::HTML(html)
   #doc.css("td").each_with_index do |link,i|
@@ -36,14 +34,12 @@ def all_counties(state)
     puts "#{county}: #{listprice}"
     i+=4
   end
+end
 
 
   end
 end
 
-  doc.css("td")[15].text.include?("Montgomery")
-  doc.css("td")[11].text.gsub("\n","") #first county
-  doc.css("td")[12].text #gives list price, then skip 13 and 14
-
-end
-end
+  #doc.css("td")[15].text.include?("Montgomery")
+  #doc.css("td")[11].text.gsub("\n","") #first county
+  #doc.css("td")[12].text #gives list price,
