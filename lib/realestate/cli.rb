@@ -1,5 +1,6 @@
 #CLI Controller
 #require_relative "./realestate.rb" ??
+# current limitations- if you don't put "one" or "all", it will just end.
 require 'pry'
 class Realestate::CLI
     def greeting
@@ -22,18 +23,13 @@ class Realestate::CLI
       end
     elsif input2== "one"
       puts "Enter the county name:"
-      county= gets.strip.capitalize #needs to be capitalized ?
-      #county= input3.capitalize!
+      county= gets.strip.capitalize
       Realestate::RealEstate.by_county(state,county)
-      puts "Please enter another county, enter 'restart' to check a different state, or enter 'exit'"
+      puts "Please 'restart' to make another search, or enter 'exit'"
       input4= gets.strip
       if input4== 'restart'
         call
       elsif input4== 'exit'
-      else
-        newcounty= input4 #check if correct capitalization?
-        Realestate::RealEstate.by_county(state,newcounty)
-      #else
       end
     end
 
