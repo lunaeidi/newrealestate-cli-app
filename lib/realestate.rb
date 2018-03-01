@@ -26,8 +26,8 @@ def self.all_counties(state)
   html = open('https://www.trulia.com/home_prices/' + state + '/',"User-Agent" => "Mozilla/5.0 (Android 4.4; Mobile; rv:41.0) Gecko/41.0 Firefox/41.0")#is there a way to plug in a variable in an open-uri link?
   doc = Nokogiri::HTML(html)
   #doc.css("td").each_with_index do |link,i|
-  i = 11
-  while i < (doc.css("td").length-5) #is this valid ? gives argument error ?
+  i = 4
+  while i < (doc.css("td").length) #is this valid ? gives argument error ?
     county= doc.css("td")[i].text.gsub("\n","")
     listprice= doc.css("td")[i+1].text
     #hash[:county] = listprice
