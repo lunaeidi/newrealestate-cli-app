@@ -32,7 +32,7 @@ def self.all_counties(state)
     listprice= doc.css("td")[i+1].text
     #hash[:county] = listprice
     puts "#{county}: #{listprice}"
-    i+=4
+    i+=2
   end
 end
 
