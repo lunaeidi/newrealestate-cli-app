@@ -1,8 +1,6 @@
 # Realestate
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/realestate`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+In this app, you can compare the average listing prices for counties or states across the United States. You can either choose to see all of the counties and their average listing price, ordered by price, or you can search for one county specifically.
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Run realestate after installing the gem.
 
 ## Development
 
