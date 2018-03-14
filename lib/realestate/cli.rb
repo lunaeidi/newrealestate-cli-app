@@ -1,6 +1,6 @@
 # current limitations- if you don't put "one" or "all", it will just end.
 require 'pry'
-class Realestate::CLI
+class Realestate::CLIOld
     def greeting
       puts "Hello! Welcome to the RealEstate App!"
     end

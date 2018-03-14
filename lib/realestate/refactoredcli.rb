@@ -1,3 +1,4 @@
+
 require 'pry'
 class Realestate::CLI
     def greeting
@@ -27,8 +28,7 @@ class Realestate::CLI
     elsif input2== "one"
       puts "Enter the county name:"
       county= gets.strip.capitalize
-      #under the proper state, match the county
-      countyinstnace=
+      countyinstnace=stateinstance.counties.find{|c| c.name= county}
       puts countyinstnace.price
       puts "Please enter 'restart' to make another search, or enter 'exit'"
       input4= gets.strip
