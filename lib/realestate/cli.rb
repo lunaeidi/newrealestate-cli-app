@@ -1,5 +1,3 @@
-#CLI Controller
-#require_relative "./realestate.rb" ??
 # current limitations- if you don't put "one" or "all", it will just end.
 require 'pry'
 class Realestate::CLI
