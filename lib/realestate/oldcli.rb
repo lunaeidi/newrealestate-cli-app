@@ -1,6 +1,6 @@
-
+# current limitations- if you don't put "one" or "all", it will just end.
 require 'pry'
-class Realestate::CLI
+class Realestate::CLIOld
     def greeting
       puts "Hello! Welcome to the RealEstate App!"
     end
@@ -13,13 +13,7 @@ class Realestate::CLI
     puts "Would you like to see the listing prices for all counties, or for one county? Type 'all' or 'one'"
     input2= gets.strip
     if input2== "all"
-
-      s= Scraper.new(state)
-      stateinstance= s.scrape
-      state.counties each do |county|#match the state the person searched.
-      puts "#{county.name}: #{county.price}"
-    end
-
+      Realestate::RealEstate.all_counties(state) #are my methods class or instance methods?
       puts "Enter 'restart' to go back to main menu, or enter 'exit'"
       input5= gets.strip
       if input5== 'restart'
@@ -28,8 +22,7 @@ class Realestate::CLI
     elsif input2== "one"
       puts "Enter the county name:"
       county= gets.strip.capitalize
-      countyinstnace=stateinstance.counties.find{|c| c.name= county}
-      puts countyinstnace.price
+      Realestate::RealEstate.by_county(state,county)
       puts "Please enter 'restart' to make another search, or enter 'exit'"
       input4= gets.strip
       if input4== 'restart'
