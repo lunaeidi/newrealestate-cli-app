@@ -14,7 +14,7 @@ class Realestate::CLI
     input2= gets.strip
     if input2== "all"
 
-      s= Scraper.new(state)
+      s= Realestate::Scraper.new(state)
       stateinstance= s.scrape
       state.counties each do |county|#match the state the person searched.
       puts "#{county.name}: #{county.price}"

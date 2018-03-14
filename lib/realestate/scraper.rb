@@ -1,6 +1,6 @@
 
 
-class Scraper #add module before this and the other class?
+class Realestate::Scraper #add module before this and the other class?
   attr_accessor :doc, :state
 def initialize(state)
   @state= State.new
