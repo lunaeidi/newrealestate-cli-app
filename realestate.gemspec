@@ -10,9 +10,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["'Nicole Eidi'"]
   spec.email         = ["'nicoleeidi1@gmail.com'"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{In this app, you can compare the average listing prices for counties or states across the United States. You can either choose to see all of the counties and their average listing price, ordered by price, or you can search for one county specifically.}
+
+  spec.homepage      = "https://github.com/nicoleeidi/newrealestate-cli-app.git"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
