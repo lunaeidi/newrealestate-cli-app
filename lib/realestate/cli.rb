@@ -23,7 +23,7 @@ class Realestate::CLI
       puts "Enter the county name:"
       county= gets.strip.capitalize
       Realestate::RealEstate.by_county(state,county)
-      puts "Please 'restart' to make another search, or enter 'exit'"
+      puts "Please enter 'restart' to make another search, or enter 'exit'"
       input4= gets.strip
       if input4== 'restart'
         call
