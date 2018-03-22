@@ -1,6 +1,6 @@
 
 require 'pry'
-class Realestate::CLI
+class CLI
     def greeting
       puts "Hello! Welcome to the RealEstate App!"
     end
@@ -10,13 +10,15 @@ class Realestate::CLI
     if state.include?(" ")
       state= state.gsub(" ","_")
     end
+
     puts "Would you like to see the listing prices for all counties, or for one county? Type 'all' or 'one'"
     input2= gets.strip
-    if input2== "all"
 
-      s= Realestate::Scraper.new(state)
+
+      s= Scraper.new(state) #shuld i have the Realestate?
       stateinstance= s.scrape
-      state.counties each do |county|#match the state the person searched.
+      if input2== "all"
+      stateinstance.counties.each do |county|#match the state the person searched.
       puts "#{county.name}: #{county.price}"
     end
 
@@ -28,6 +30,7 @@ class Realestate::CLI
     elsif input2== "one"
       puts "Enter the county name:"
       county= gets.strip.capitalize
+
       countyinstnace=stateinstance.counties.find{|c| c.name= county}
       puts countyinstnace.price
       puts "Please enter 'restart' to make another search, or enter 'exit'"
