@@ -1,4 +1,8 @@
 #!/usr/bin/env ruby
 require_relative '../lib/realestate'
-CLI.new.greeting
-CLI.new.call
+c=CLI.new
+c.greeting
+c.call
+#CLI.new.greeting
+
+#CLI.new.call
