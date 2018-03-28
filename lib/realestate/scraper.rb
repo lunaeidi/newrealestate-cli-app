@@ -20,14 +20,14 @@ def scrape #should return an instance of a state with its details .
       # c.name= doc.css("td")[i].text.gsub("\n","")
       # c.price=doc.css("td")[i+1].text
 
-      i = 4
-      while i < (doc.css("td").length)
+      i = 11
+      while i < (doc.css("td").length-3)
         c= County.new
-        c.name= doc.css("td")[i].text.gsub("\n","")
+        c.name= doc.css("td")[i].text #.gsub("\n","")
         c.price= doc.css("td")[i+1].text
         c.state= @state.name
         @state.counties << c #add county to the state
-        i+=2
+        i+=4
       end
     end
 
