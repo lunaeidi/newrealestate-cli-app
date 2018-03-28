@@ -15,14 +15,14 @@ class CLI
     input2= gets.strip
 
 
-      s= Scraper.new(state) #shuld i have the Realestate?
+      s= Scraper.new(state)
       stateinstance= s.scrape
       if input2== "all"
       stateinstance.counties.each do |county|#match the state the person searched.
       puts "#{county.name}: #{county.price}"
     end
 
-      puts "Enter 'restart' to go back to main menu, or enter 'exit'"
+      puts "Enter 'restart' to go back to main menu, or enter 'exit'" #if exit, goes to bottom
       input5= gets.strip
       if input5== 'restart'
         call
