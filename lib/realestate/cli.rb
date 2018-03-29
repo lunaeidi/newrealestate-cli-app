@@ -47,6 +47,7 @@ class CLI
 
       countyinstnace=stateinstance.counties.find{|c| c.name= county}
       puts countyinstnace.price
+
       restart_or_exit
       # puts "Please enter 'restart' to make another search, or enter 'exit'"
       # input4= gets.strip
