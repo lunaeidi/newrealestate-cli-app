@@ -4,6 +4,7 @@ class CLI
 
     def greeting
       puts "Hello! Welcome to the RealEstate App!"
+      call
     end
     def restart_or_exit
     puts "Enter 'restart' to go back to main menu, or enter 'exit'" #if exit, goes to bottom
